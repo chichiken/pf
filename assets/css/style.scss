@@ -1,0 +1,269 @@
+@charset "utf-8";
+@import "_mixin";
+
+@font-face{font-family: notoS; font-weight: 100;
+    src: url("../font/NotoSansKR-Thin.eot");
+    src: local("※"),
+    url("../font/NotoSansKR-Thin.woff2") format("woff2"),
+    url("../font/NotoSansKR-Thin.woff") format("woff"),
+    url("../font/NotoSansKR-Thin.otf") format("opentype");
+}
+@font-face{font-family: notoS; font-weight: 200;
+    src: url("../font/NotoSansKR-Light.eot");
+    src: local("※"),
+    url("../font/NotoSansKR-Light.woff2") format("woff2"),
+    url("../font/NotoSansKR-Light.woff") format("woff"),
+    url("../font/NotoSansKR-Light.otf") format("opentype");
+}
+@font-face{font-family: notoS; font-weight: 400;
+    src: url("../font/NotoSansKR-Regular.eot");
+    src: local("※"),
+    url("../font/NotoSansKR-Regular.woff2") format("woff2"),
+    url("../font/NotoSansKR-Regular.woff") format("woff"),
+    url("../font/NotoSansKR-Regular.otf") format("opentype");
+}
+@font-face{font-family: notoS; font-weight: 500;
+    src: url("../font/NotoSansKR-Medium.eot");
+    src: local("※"),
+    url("../font/NotoSansKR-Medium.woff2") format("woff2"),
+    url("../font/NotoSansKR-Medium.woff") format("woff"),
+    url("../font/NotoSansKR-Medium.otf") format("opentype");
+}
+@font-face{font-family: notoS; font-weight: 700;
+    src: url("../font/NotoSansKR-Bold.eot");
+    src: local("※"),
+    url("../font/NotoSansKR-Bold.woff2") format("woff2"),
+    url("../font/NotoSansKR-Bold.woff") format("woff"),
+    url("../font/NotoSansKR-Bold.otf") format("opentype");
+}
+@font-face{font-family: kopubB; font-weight: 200;
+    src: url("../font/KoPubWorldBatangProLight.eot");
+    src: local("※"),
+    url("../font/KoPubWorldBatangProLight.woff") format("woff"),
+    url("../font/KoPubWorldBatangProLight.otf") format("opentype");
+}
+@font-face{font-family: kopubB; font-weight: 400;
+    src: url("../font/KoPubWorldBatangProMedium.eot");
+    src: local("※"),
+    url("../font/KoPubWorldBatangProMedium.woff2") format("woff2"),
+    url("../font/KoPubWorldBatangProMedium.woff") format("woff"),
+    url("../font/KoPubWorldBatangProMedium.otf") format("opentype");
+}
+@font-face{font-family: kopubB; font-weight: 700;
+    src: url("../font/KoPubWorldBatangProBold.eot");
+    src: local("※"),
+    url("../font/KoPubWorldBatangProBold.woff2") format("woff2"),
+    url("../font/KoPubWorldBatangProBold.woff") format("woff"),
+    url("../font/KoPubWorldBatangProBold.otf") format("opentype");
+}
+@font-face{font-family: montS; font-weight: 100;
+    src: url("../font/Montserrat-Thin.eot");
+    src: local("※"),
+    url("../font/Montserrat-Thin.woff2") format("woff2"),
+    url("../font/Montserrat-Thin.woff") format("woff"),
+    url("../font/Montserrat-Thin.otf") format("opentype");
+}
+@font-face{font-family: montS; font-weight: 400;
+    src: url("../font/Montserrat-Regular.eot");
+    src: local("※"),
+    url("../font/Montserrat-Regular.woff2") format("woff2"),
+    url("../font/Montserrat-Regular.woff") format("woff"),
+    url("../font/Montserrat-Regular.otf") format("opentype");
+}
+@font-face{font-family: montS; font-weight: 500;
+    src: url("../font/Montserrat-Medium.eot");
+    src: local("※"),
+    url("../font/Montserrat-Medium.woff2") format("woff2"),
+    url("../font/Montserrat-Medium.woff") format("woff"),
+    url("../font/Montserrat-Medium.otf") format("opentype");
+}
+
+/* tag reset */
+body, h1, h2, h3, h4, h5, h6, ul, p, video{margin: 0; padding: 0;}
+ul{list-style: none;}
+h1, h2, h3, h4, h5, h6{font-size: inherit; font-weight: inherit;}
+img{vertical-align: top;}
+a:link, a:hover, a:visited, a:active{text-decoration: none; color: inherit;}
+button{border: none; background: none; cursor: pointer; font-family: inherit; font-size: inherit; color: inherit;}
+nav, section{display: block;}
+
+/* common class */
+.p_r{position: relative;}
+.p_a{position: absolute;}
+.clesrfix:after{content: ""; display: block; clear: both;}
+
+body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line-height: 1.7; letter-spacing: -0.04em;}
+
+#logo{
+    position: fixed; top: 50px; left: 50px; z-index: 1000;
+    img{width: 100px;}
+}
+
+#indicator{
+    position: fixed; top: 50%; right: 125px; margin-top: -168px; width: 200px; height: 336px; font-family: montS; font-size: 35px; font-weight: 100; z-index: 1000;
+    ul{position: absolute; top: 0; right: 0;}
+    ul li{
+        position: relative; margin: 10px 0; color: #fff;
+        &:first-child{margin-top: 0;}
+        &:after{content: ""; position: absolute; bottom: -1px; left: 0; width: 0; height: 1px; background: transparent;}
+        a{width: 140px; display: flex; justify-content: space-between;}
+    }
+    ul li.on{
+        &:after{content: ""; position: absolute; bottom: -1px; left: 0; width: 100%; height: 1px; background: #fff;}
+    }
+}
+
+#container section{
+    height: 100vh; min-height: 500px;
+    .head{
+        position: relative; text-align: right; z-index: 1;
+        img, h2{position: absolute;}
+        img{top: 38px; right: 118px; z-index: 100;}
+        &.cnt2_h img, &.cnt3_h img{height: 200px;}
+        &.cnt4_h img, &.cnt5_h img{height: 100px;}
+        h2{display: block; top: 45px; right: 120px; opacity: 30%; font-family: montS; font-weight: 700; font-size: 100px; line-height: 1em;}
+    }
+}
+#container #cnt1{
+    color: #fff; background: url("../image/index/bg_intro.jpg") fixed top center; overflow: hidden;
+    .cnt1_txt{
+        position: relative; width: 1398px; margin: 33vh auto 0;
+        p:first-child, strong{font-family: montS; line-height: 1em;}
+        p:first-child{font-size: 120px; font-weight: 100;}
+        strong{font-size: 150px;}
+        p:last-child{font-family: kopubB; font-weight: 200; font-size: 25px; margin-top: 2em;}
+        &:before{content: ""; position: absolute; top: 0; left: -50px; width: 3px; height: 100%; background: #ffffff;}
+    }
+    > svg{
+        position: absolute; top: 20vh; left: 38vw; width: 562px; height: 287px;
+        .shooting_star{fill: #fff;}
+    }
+    .mouse{
+        position: absolute; bottom: -25px; right: 170px; text-align: center; line-height: 1em;
+        p{font-family: kopubB; font-weight: 200;}
+        img{margin-top: -25px; width: 54px; height: 161px;}
+    }
+    .overlay{
+        position: relative; mix-blend-mode: overlay; opacity: 50%; z-index: 900;
+        img{position: absolute;}
+        .dia1{width: 720px; top: -100vh; left: -10vw;}
+        .dia2{width: 365px; top: 5vh; left: 50vw;}
+        .rou{width: 680px; top: -30vh; left: 70vw;}
+        .squa{width: 200px; top: 20vh; left: 45vw;}
+    }
+}
+#container #cnt2{
+    position: relative; overflow: hidden; color: #fff; background: #3954a0;
+    .cnt2_h{
+        position: relative; text-align: right; z-index: 1;
+        img, h2{position: absolute;}
+        img{top: 38px; right: 118px; height: 200px;}
+        h2{
+            background: -webkit-linear-gradient(-45deg, #ff8b9e 0%,#6fcaff 100%); background: -moz-linear-gradient(-45deg, #ff8b9e 0%, #6fcaff 100%); background: linear-gradient(135deg, #ff8b9e 0%, #6fcaff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    }
+    .cnt2_txt, .cnt2_graph{margin-left: 8vw;}
+    .cnt2_txt{
+        position: relative; z-index: 150;
+        margin-top: 17.5vh;
+        > div{
+            line-height: 1.2em; font-weight: 100;
+            strong{color: #ffbece; font-weight: 500;}
+        }
+        div:nth-child(1){font-size: 80px;}
+        div:nth-child(2){font-size: 48px;}
+        > p{font-family: kopubB; font-size: 22px; font-weight: 200; line-height: 1.5em; margin: 25px 0;}
+    }
+    .cnt2_graph{
+        position: relative; width: 620px;
+        ul{
+            display: inline-block; width: 620px;
+            &.coding{margin-top: 25px;}
+        }
+        ul li{
+            float: left; text-align: center; font-family: montS; margin-right: 45px;
+            span{
+                @include borderBox;
+                @include radius(50%);
+                display: block; border: 8px solid #fff; width: 110px; height: 110px;
+            }
+            p{font-weight: 100;}
+            strong{font-weight: 400;}
+        }
+        .adobe li span{font-size: 50px; line-height: 1.9em;}
+        .coding li{
+            &:nth-child(1) span{background: url("../image/icon/html.svg") no-repeat center 65%; background-size: 70px;}
+            &:nth-child(2) span{background: url("../image/icon/css.svg") no-repeat center 65%; background-size: 70px;}
+            &:nth-child(3) span{background: url("../image/icon/sass.svg") no-repeat center center; background-size: 70px;}
+            &:nth-child(4) span{background: url("../image/icon/jquery.svg") no-repeat center center; background-size: 60px;}
+        }
+    }
+    > img{position: absolute; width: 850px; bottom: 0; right: 15vw; z-index: 100;}
+    &:after{content: ""; position: absolute; top: 0; right: 0; width: 38vw; height: 100vh; background: #f7f7f7; z-index: 0;}
+}
+#container #cnt3{
+    background: #f7f7f7;
+    .cnt3_h{
+        h2{
+            background: -webkit-linear-gradient(-45deg, #ffa545 0%,#6fcaff 100%); background: -moz-linear-gradient(-45deg, #ffa545 0%, #6fcaff 100%); background: linear-gradient(135deg, #ffa545 0%, #6fcaff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    }
+    ul{
+        width: 1046px; padding: 25vh 0 0 13vw;
+        li{
+            float: left; height: 237px;
+            &:nth-child(3){margin-top: 10vh;}
+            &:after{content: ""; display: block; clear: both;}
+            img, div{float: left;}
+            &:nth-child(2) img{margin-left: 80px;}
+        }
+    }
+    li .cnt3_txt{
+        position: relative; padding-left: 43px;
+        h3{font-size: 35px; font-weight: 700;}
+        p{font-family: kopubB; font-weight: 200; margin-bottom: 0.3em;}
+        a{
+            font-family: montS; font-weight: 700; color: #1a68e5;
+            &:nth-child(3){margin-right: 2.2em;}
+        }
+        &:after{content: ""; position: absolute; bottom: 6px; width: 2px; height: 1.2rem; background: #aaa;}
+    }
+    ul li:nth-child(1) .cnt3_txt, ul li:nth-child(2) .cnt3_txt{
+        top: 25px;
+        &:after{content: ""; left: 5.6em;}
+    }
+    ul li:nth-child(3) .cnt3_txt{
+        top: 36px; padding-left: 66px;
+        &:after{left: 7.2em;}
+    }
+    ul li:nth-child(4) p{font-weight: 200; margin: 18.5vh 0 0 150px;}
+}
+#container #cnt4{
+    font-family: kopubB; font-weight: 200; color: #fff; background: url("../image/index/bg_project1.jpg") fixed center center;
+    .cnt4_h{
+        h2{
+            mix-blend-mode: multiply;
+            color: #7c606a;
+        }
+    }
+    .cnt4_vd{@include borderBox; padding-top: 18vh;}
+    video{display: block; width: 745px; height: 413px; margin: 0 auto;}
+    .cnt4_txt{
+        padding-top: 25px; text-align: center;
+        strong{font-size: 22px;}
+        p{margin-bottom: 25px;}
+        a{
+            @include radius(24.1px);
+            @include borderBox;
+            @include transition(all 0.5s);
+            display: block; width: 123px; height: 50px; line-height: 44px; font-family: montS; font-size: 22px; font-weight: 400; border: 3px solid #fff; margin: 0 auto;
+            &:hover{color: #1a68e5; font-weight: 700; background: #fff;}
+        }
+    }
+}
