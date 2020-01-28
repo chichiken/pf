@@ -94,6 +94,7 @@ nav, section{display: block;}
 
 body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line-height: 1.7; letter-spacing: -0.04em;}
 
+/* common */
 #logo{
     position: fixed; top: 50px; left: 50px; z-index: 1000;
     img{width: 100px;}
@@ -113,6 +114,7 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
     }
 }
 
+/* index */
 #container section{
     height: 100vh; min-height: 500px;
     .head{
@@ -122,7 +124,9 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
         &.cnt2_h img, &.cnt3_h img{height: 200px;}
         &.cnt4_h img, &.cnt5_h img{height: 100px;}
         h2{display: block; top: 45px; right: 120px; opacity: 30%; font-family: montS; font-weight: 700; font-size: 100px; line-height: 1em;}
+        &.cnt4_h h2, &.cnt5_h h2{mix-blend-mode: multiply; color: #7c606a;}
     }
+    &#cnt4, &#cnt5{font-family: kopubB; font-weight: 200; color: #fff;}
 }
 #container #cnt1{
     color: #fff; background: url("../image/index/bg_intro.jpg") fixed top center; overflow: hidden;
@@ -154,17 +158,12 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
 }
 #container #cnt2{
     position: relative; overflow: hidden; color: #fff; background: #3954a0;
-    .cnt2_h{
-        position: relative; text-align: right; z-index: 1;
-        img, h2{position: absolute;}
-        img{top: 38px; right: 118px; height: 200px;}
-        h2{
+    .cnt2_h h2{
             background: -webkit-linear-gradient(-45deg, #ff8b9e 0%,#6fcaff 100%); background: -moz-linear-gradient(-45deg, #ff8b9e 0%, #6fcaff 100%); background: linear-gradient(135deg, #ff8b9e 0%, #6fcaff 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-    }
     .cnt2_txt, .cnt2_graph{margin-left: 8vw;}
     .cnt2_txt{
         position: relative; z-index: 150;
@@ -201,19 +200,17 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
             &:nth-child(4) span{background: url("../image/icon/jquery.svg") no-repeat center center; background-size: 60px;}
         }
     }
-    > img{position: absolute; width: 850px; bottom: 0; right: 15vw; z-index: 100;}
+    > img{position: absolute; width: 850px; bottom: 0; right: 12.5vw; z-index: 100;}
     &:after{content: ""; position: absolute; top: 0; right: 0; width: 38vw; height: 100vh; background: #f7f7f7; z-index: 0;}
 }
 #container #cnt3{
     background: #f7f7f7;
-    .cnt3_h{
-        h2{
+    .cnt3_h h2{
             background: -webkit-linear-gradient(-45deg, #ffa545 0%,#6fcaff 100%); background: -moz-linear-gradient(-45deg, #ffa545 0%, #6fcaff 100%); background: linear-gradient(135deg, #ffa545 0%, #6fcaff 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-    }
     ul{
         width: 1046px; padding: 25vh 0 0 13vw;
         li{
@@ -245,15 +242,11 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
     ul li:nth-child(4) p{font-weight: 200; margin: 18.5vh 0 0 150px;}
 }
 #container #cnt4{
-    font-family: kopubB; font-weight: 200; color: #fff; background: url("../image/index/bg_project1.jpg") fixed center center;
-    .cnt4_h{
-        h2{
-            mix-blend-mode: multiply;
-            color: #7c606a;
-        }
+    background: url("../image/index/bg_project1.jpg") fixed center center;
+    .cnt4_vd{
+        @include borderBox; padding-top: 23vh;
+        video{display: block; width: 745px; height: 413px; margin: 0 auto;}
     }
-    .cnt4_vd{@include borderBox; padding-top: 18vh;}
-    video{display: block; width: 745px; height: 413px; margin: 0 auto;}
     .cnt4_txt{
         padding-top: 25px; text-align: center;
         strong{font-size: 22px;}
@@ -265,5 +258,41 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
             display: block; width: 123px; height: 50px; line-height: 44px; font-family: montS; font-size: 22px; font-weight: 400; border: 3px solid #fff; margin: 0 auto;
             &:hover{color: #1a68e5; font-weight: 700; background: #fff;}
         }
+    }
+}
+#container #cnt5{
+    position: relative; background: url("../image/index/bg_project2.jpg") fixed center bottom;
+    .cnt5_wrap{
+        position: absolute; display: flex; top: calc(50% - 272.5px); left: calc(50% - 435px);
+    }
+    .cnt5_vd, .cnt5_txt{float: left;}
+    .cnt5_vd{
+        @include borderBox;
+        video{display: block; width: 306px; height: 545px;}
+    }
+    .cnt5_txt{
+        margin: auto 0 auto 75px;
+        strong{font-size: 22px;}
+        p{margin-bottom: 25px; width: 375px; word-break: keep-all;}
+        a{
+            @include radius(24.1px);
+            @include borderBox;
+            @include transition(all 0.5s);
+            display: block; width: 123px; height: 50px; line-height: 44px; font-family: montS; font-size: 22px; font-weight: 400; text-align: center; border: 3px solid #fff;
+            &:hover{color: #1a68e5; font-weight: 700; background: #fff;}
+        }
+    }
+}
+
+/* sub common */
+.info_head{@include borderBox; width: 100%; height: 350px; padding: 50px 0;}
+.info_head ul li, .info_body ul li{float: left;}
+
+#ts_ifhd{
+    color: #fff; background: #ca1a37;
+    .inhead1, .inhead2{width: 60%; margin: 0 auto;}
+    .inhead1{
+        h2{font-size: 50px; font-weight: 700;}
+        p{width: 66%; margin-left: 30%; margin-top: -70px;}
     }
 }
