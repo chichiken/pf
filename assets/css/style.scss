@@ -126,20 +126,22 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
         &.cnt4_h h2, &.cnt5_h h2{mix-blend-mode: multiply; color: #7c606a;}
     }
     &#cnt4, &#cnt5{font-family: kopubB; font-weight: 200; color: #fff;}
+    video{@include boxShadow(0 3px 5px rgba(0, 0, 0, 0.3));}
 }
 #container #cnt1{
     color: #fff; background: url("../image/index/bg_intro.jpg") fixed top center; overflow: hidden;
     .cnt1_txt{
-        position: relative; width: 1398px; margin: 33vh auto 0;
+        position: relative; width: 1398px; margin: 33vh auto 0; z-index: 50;
         p:first-child, strong{font-family: montS; line-height: 1em;}
         p:first-child{font-size: 120px; font-weight: 100;}
         strong{font-size: 150px;}
         p:last-child{font-family: kopubB; font-weight: 200; font-size: 25px; margin-top: 2em;}
         &:before{content: ""; position: absolute; top: 0; left: -50px; width: 3px; height: 100%; background: #ffffff;}
     }
-    > svg{
-        position: absolute; top: 20vh; left: 38vw; width: 562px; height: 287px;
-        .shooting_star{fill: #fff;}
+    .svgbox{
+        position: relative; top: -50vh; left: 40vw; width: 500px; height: 300px;
+        .starpath{fill: #fff; stroke: none;}
+        .hiddenbox{position: absolute; right: 0; bottom: 0 ;width: 130%; height: 100%; background: url("../image/index/bg_intro.jpg") fixed top center;}
     }
     .mouse{
         position: absolute; bottom: -25px; right: 170px; text-align: center; line-height: 1em;
@@ -147,12 +149,13 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
         img{margin-top: -25px; width: 54px; height: 161px;}
     }
     .overlay{
-        position: relative; mix-blend-mode: overlay; opacity: 50%; z-index: 900;
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%; mix-blend-mode: overlay; opacity: 50%; z-index: 900; overflow: hidden;
         img{position: absolute;}
-        .dia1{width: 720px; top: -100vh; left: -10vw;}
-        .dia2{width: 365px; top: 5vh; left: 50vw;}
-        .rou{width: 680px; top: -30vh; left: 70vw;}
-        .squa{width: 200px; top: 20vh; left: 45vw;}
+        .parti{width: 2000px; top: -5vh; left: -8vw; opacity: 0.5;}
+        .dia1{width: 720px; top: -10vh; left: -10vw;}
+        .dia2{width: 365px; top: 68vh; left: 50vw;}
+        .rou{width: 680px; top: 33vh; left: 70vw;}
+        .squa{width: 200px; top: 78vh; left: 45vw;}
     }
 }
 #container #cnt2{
@@ -188,8 +191,8 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
                 @include radius(50%);
                 display: block; border: 8px solid #fff; width: 110px; height: 110px;
             }
-            p{font-weight: 100;}
-            strong{font-weight: 400;}
+            p{font-weight: 400; margin-top: 8px;}
+            strong{font-weight: 500;}
         }
         .adobe li span{font-size: 50px; line-height: 1.9em;}
         .coding li{
@@ -244,7 +247,7 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
     background: url("../image/index/bg_project1.jpg") fixed center center;
     .cnt4_vd{
         @include borderBox; padding-top: 23vh;
-        video{display: block; width: 745px; height: 413px; margin: 0 auto;}
+        video{display: block; width: 734px; height: 413px; margin: 0 auto;}
     }
     .cnt4_txt{
         padding-top: 25px; text-align: center;
@@ -255,7 +258,7 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
             @include borderBox;
             @include transition(all 0.5s);
             display: block; width: 123px; height: 50px; line-height: 44px; font-family: montS; font-size: 22px; font-weight: 400; border: 3px solid #fff; margin: 0 auto;
-            &:hover{color: #1a68e5; font-weight: 700; background: #fff;}
+            &:hover{color: #eb651e; font-weight: 700; background: #fff;}
         }
     }
 }
@@ -267,7 +270,7 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
     .cnt5_vd, .cnt5_txt{float: left;}
     .cnt5_vd{
         @include borderBox;
-        video{display: block; width: 306px; height: 545px;}
+        video{display: block; width: 299px; height: 545px;}
     }
     .cnt5_txt{
         margin: auto 0 auto 75px;
@@ -278,7 +281,7 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
             @include borderBox;
             @include transition(all 0.5s);
             display: block; width: 123px; height: 50px; line-height: 44px; font-family: montS; font-size: 22px; font-weight: 400; text-align: center; border: 3px solid #fff;
-            &:hover{color: #1a68e5; font-weight: 700; background: #fff;}
+            &:hover{color: #ca1a37; font-weight: 700; background: #fff;}
         }
     }
 }
@@ -295,8 +298,8 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
         p{width: 66%; margin-left: 30%; margin-top: -70px;}
     }
     .inhead2 li{
-        margin-top: 2.5vw; margin-left: 100px;
-        &:first-child{margin-left: 0;}
+        margin-top: 2.5vw;
+        &:first-child{margin-left: 0 !important;}
     }
     .inhead2 li p, .inhead2 li a{font-size: 15px; font-weight: 300; display: block;}
     .inhead2 li a{position: relative;}
@@ -312,30 +315,44 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
     article h3, article > p{text-align: center;}
     article h3{font-family: montS; font-size: 50px; font-weight: 500; margin-bottom: 50px;}
     article > p{margin-top: 50px;}
-}
-
-#ts_ifhd{color: #fff; background: #ca1a37;}
-
-#ts_ifbd{
-    article{width: 1280px;}
-    .view{
-        height: 900px;
-        li{margin-left: 50px;}
-        li:first-child{margin-left: 0;}
-        li img{@include boxShadow(0 3px 5px rgba(0, 0, 0, 0.3));}
-    }
+    .view li img{@include boxShadow(0 3px 5px rgba(0, 0, 0, 0.3));}
     .color{
         height: 500px; text-align: center;
         ul{width: 750px; margin: 0 auto;}
         ul li{
             margin-left: 75px;
             &:first-child{margin-left: 0;}
-            span{@include radius(50%); display: block; width: 200px; height: 200px; color: #fff; font-size: 35px; font-weight: 700; line-height: 200px;}
+            span{
+                @include radius(50%);
+                display: block; width: 200px; height: 200px; color: #fff; font-size: 35px; font-weight: 700; line-height: 200px;
+            }
+            > p{width: 700px; margin-left: auto; margin-right: auto;}
+        }
+    }
+}
+
+#cm_ifhd{
+    color: #fff; background: #eb651e;
+    .inhead2 li{margin-left: 50px;}
+}
+
+#ts_ifhd{
+    color: #fff; background: #ca1a37;
+    .inhead2 li{margin-left: 100px;}
+}
+#ts_ifbd{
+    article{width: 1280px;}
+    .view{
+        height: 900px;
+        li{margin-left: 50px;}
+        li:first-child{margin-left: 0;}
+    }
+    .color{
+        ul li{
             &:nth-child(1) span{background: #ca1a37;}
             &:nth-child(2) span{background: #d58d3f;}
             &:nth-child(3) span{background: #777777;}
         }
-        > p{width: 700px; margin-left: auto; margin-right: auto;}
     }
 
 }
