@@ -12,13 +12,6 @@
     <script src="assets/js/jquery.easing.min.js"></script>
     <script src="assets/js/common.js"></script>
     <script src="assets/js/idx.js"></script>
-    <script>
-        $(document).ready(function() {
-            setInterval(function () {
-                $('.svgbox .hiddenbox').css({width: '100%', height: '100%'}).stop().animate({width: 0, height: 0}, 1500);
-            }, 3000);
-        });
-    </script>
 </head>
 
 <body>
@@ -119,19 +112,19 @@
             </div>
             <div class="mouse">
                 <p>Scroll</p>
-                <img src="assets/image/icon/scroll.svg" alt="...">
+                <img src="assets/image/icon/scroll.svg" alt="">
             </div>
             <div class="overlay">
-                <img class="parti" src="assets/image/index/01particle.svg" alt="...">
-                <img class="dia1" src="assets/image/index/01bg_diamond1.svg" alt="...">
-                <img class="rou" src="assets/image/index/01bg_round.svg" alt="...">
-                <img class="dia2" src="assets/image/index/01bg_diamond2.svg" alt="...">
-                <img class="squa" src="assets/image/index/01bg_square.svg" alt="...">
+                <img class="parti" src="assets/image/index/01particle.svg" alt="">
+                <img class="dia1" src="assets/image/index/01bg_diamond1.svg" alt="">
+                <img class="rou" src="assets/image/index/01bg_round.svg" alt="">
+                <img class="dia2" src="assets/image/index/01bg_diamond2.svg" alt="">
+                <img class="squa" src="assets/image/index/01bg_square.svg" alt="">
             </div>
         </section>
         <section id="cnt2">
             <div class="cnt2_h head">
-                <img src="assets/image/index/02head.svg" alt="...">
+                <img src="assets/image/index/02head.svg" alt="프로필 페이지">
                 <h2>WHO<br> ARE?</h2>
             </div>
             <div class="cnt2_txt">
@@ -146,43 +139,114 @@
                 <p>업무 능력만큼 중요한 건 팀원과 소통하고, <br>일을 즐길 수 있는 힘이라고 생각합니다.</p>
             </div>
             <div class="cnt2_graph">
-                <ul class="adobe clearfix">
+                <ul class="clearfix">
                     <li>
-                        <span>Ps</span>
+                        <h4 class="skill_tit">Ps</h4>
+                        <svg class="skill_bg" viewbox="0 0 100 100" width="120" height="120">
+                            <circle cx="50" cy="50" r="40" />
+                          </svg>
+                        <svg class="skill_round" viewbox="0 0 100 100" width="120" height="120" data-percent="95"><!-- data-percent 값 작성 -->
+                            <circle cx="50" cy="50" r="40" />
+                        </svg>
                         <p>Photoshop</p>
-                        <strong>100%</strong>
+                        <p class="skill_txt" aria-label="100%">
+                            <span class="skill_num" aria-hidden="true"></span>
+                            <span class="skill_per" aria-hidden="true">%</span>
+                        </p>
                     </li>
                     <li>
-                        <span>Ai</span>
+                        <h4 class="skill_tit">Ai</h4>
+                        <svg class="skill_bg" viewbox="0 0 100 100" width="120" height="120">
+                            <circle cx="50" cy="50" r="40" />
+                          </svg>
+                        <svg class="skill_round" viewbox="0 0 100 100" width="120" height="120" data-percent="95">
+                            <circle cx="50" cy="50" r="40" />
+                        </svg>
                         <p>Illustrator</p>
-                        <strong>75%</strong>
+                        <p class="skill_txt" aria-label="80%">
+                            <span class="skill_num" aria-hidden="true"></span>
+                            <span class="skill_per" aria-hidden="true">%</span>
+                        </p>
                     </li>
                     <li>
-                        <span>Pr</span>
+                        <h4 class="skill_tit">Pr</h4>
+                        <svg class="skill_bg" viewbox="0 0 100 100" width="120" height="120">
+                            <circle cx="50" cy="50" r="40" />
+                          </svg>
+                        <svg class="skill_round" viewbox="0 0 100 100" width="120" height="120" data-percent="95">
+                            <circle cx="50" cy="50" r="40" />
+                        </svg>
                         <p>Premiere</p>
-                        <strong>50%</strong>
+                        <p class="skill_txt" aria-label="80%">
+                            <span class="skill_num" aria-hidden="true"></span>
+                            <span class="skill_per" aria-hidden="true">%</span>
+                        </p>
                     </li>
                 </ul>
                 <ul class="coding clearfix">
                     <li>
-                        <span></span>
+                        <h4 class="skill_tit">
+                            <img src="assets/image/icon/html.svg" alt="">
+                        </h4>
+                        <svg class="skill_bg" viewbox="0 0 100 100" width="120" height="120">
+                            <circle cx="50" cy="50" r="40" />
+                          </svg>
+                        <svg class="skill_round" viewbox="0 0 100 100" width="120" height="120" data-percent="95">
+                            <circle cx="50" cy="50" r="40" />
+                        </svg>
                         <p>Html</p>
-                        <strong>100%</strong>
+                        <p class="skill_txt" aria-label="100%">
+                            <span class="skill_num" aria-hidden="true"></span>
+                            <span class="skill_per" aria-hidden="true">%</span>
+                        </p>
                     </li>
                     <li>
-                        <span></span>
-                        <p>Css</p>
-                        <strong>100%</strong>
+                        <h4 class="skill_tit">
+                            <img src="assets/image/icon/css.svg" alt="">
+                        </h4>
+                        <svg class="skill_bg" viewbox="0 0 100 100" width="120" height="120">
+                            <circle cx="50" cy="50" r="40" />
+                          </svg>
+                        <svg class="skill_round" viewbox="0 0 100 100" width="120" height="120" data-percent="95">
+                            <circle cx="50" cy="50" r="40" />
+                        </svg>
+                        <p>Html</p>
+                        <p class="skill_txt" aria-label="100%">
+                            <span class="skill_num" aria-hidden="true"></span>
+                            <span class="skill_per" aria-hidden="true">%</span>
+                        </p>
                     </li>
                     <li>
-                        <span></span>
+                        <h4 class="skill_tit">
+                            <img src="assets/image/icon/sass.svg" alt="">
+                        </h4>
+                        <svg class="skill_bg" viewbox="0 0 100 100" width="120" height="120">
+                            <circle cx="50" cy="50" r="40" />
+                          </svg>
+                        <svg class="skill_round" viewbox="0 0 100 100" width="120" height="120" data-percent="95">
+                            <circle cx="50" cy="50" r="40" />
+                        </svg>
                         <p>Sass</p>
-                        <strong>75%</strong>
+                        <p class="skill_txt" aria-label="75%">
+                            <span class="skill_num" aria-hidden="true"></span>
+                            <span class="skill_per" aria-hidden="true">%</span>
+                        </p>
                     </li>
                     <li>
-                        <span></span>
+                        <h4 class="skill_tit">
+                            <img src="assets/image/icon/jquery.svg" alt="">
+                        </h4>
+                        <svg class="skill_bg" viewbox="0 0 100 100" width="120" height="120">
+                            <circle cx="50" cy="50" r="40" />
+                          </svg>
+                        <svg class="skill_round" viewbox="0 0 100 100" width="120" height="120" data-percent="95">
+                            <circle cx="50" cy="50" r="40" />
+                        </svg>
                         <p>JQuery</p>
-                        <strong>50%</strong>
+                        <p class="skill_txt" aria-label="50%">
+                            <span class="skill_num" aria-hidden="true"></span>
+                            <span class="skill_per" aria-hidden="true">%</span>
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -190,7 +254,7 @@
         </section>
         <section id="cnt3" class="clearfix">
             <div class="cnt3_h head">
-                <img src="assets/image/index/03head.svg" alt="...">
+                <img src="assets/image/index/03head.svg" alt="디자인 작업물 페이지">
                 <h2>DESIGN<br>WORK</h2>
             </div>
             <ul class="clearfix">
@@ -199,8 +263,8 @@
                     <div class="cnt3_txt">
                         <h3>멍이옹이</h3>
                         <p>모바일 UX/UI 디자인 <br>반려동물 쇼핑몰 <br>19.10.10~19.10.23</p>
-                        <a href="">PNG</a>
-                        <a href="">PDF</a>
+                        <a href="https://drive.google.com/file/d/1_Gt2729stRt7Z_VyAinOwkms6XlckMa-/view?usp=sharing" title="다운로드 및 확인이 가능한 링크로 연결됩니다.">JPG</a>
+                        <a href="" title="다운로드 및 확인이 가능한 링크로 연결됩니다.">PDF</a>
                     </div>
                 </li>
                 <li>
@@ -208,8 +272,8 @@
                     <div class="cnt3_txt">
                         <h3>워터루 아쿠아</h3>
                         <p>페이지 리뉴얼, 리디자인 <br>수족관 쇼핑몰 <br>19.10.24~19.10.31</p>
-                        <a href="">PNG</a>
-                        <a href="">PDF</a>
+                        <a href="" title="다운로드 및 확인이 가능한 링크로 연결됩니다.">PNG</a>
+                        <a href="" title="다운로드 및 확인이 가능한 링크로 연결됩니다.">PDF</a>
                     </div>
                 </li>
                 <li>
@@ -217,8 +281,8 @@
                     <div class="cnt3_txt">
                         <h3>기타 작업물</h3>
                         <p>배너, 만화, 영상물 등 <br>직접 편집한 것들</p>
-                        <a href="">INFO</a>
-                        <a href="">PDF</a>
+                        <a href="" title="상세 페이지로 연결됩니다.">INFO</a>
+                        <a href="" title="다운로드 및 확인이 가능한 링크로 연결됩니다.">PDF</a>
                     </div>
                 </li>
                 <li>
@@ -228,7 +292,7 @@
         </section>
         <section id="cnt4">
             <div class="cnt4_h head">
-                <img src="assets/image/index/04head.svg" alt="...">
+                <img src="assets/image/index/04head.svg" alt="프로젝트1 영화관 웹디자인">
                 <h2>CHAMELEON</h2>
             </div>
             <div class="cnt4_vd">
@@ -240,12 +304,12 @@
             <div class="cnt4_txt">
                 <strong>2019.11.11~2019.12.13</strong>
                 <p>한 달 가량 진행한 팀 프로젝트입니다. 타 영화관 사이트의 불편함을 해소하고, <br>디자인적 접근성과 이용성을 높이려 했습니다. 자세한 사항은 링크를 확인해주세요.</p>
-                <a href="info/chameleon.html">INFO</a>
+                <a href="info/chameleon.html" title="상세 페이지로 연결됩니다.">INFO</a>
             </div>
         </section>
         <section id="cnt5" class="clearfix">
             <div class="cnt5_h head">
-                <img src="assets/image/index/05head.svg" alt="...">
+                <img src="assets/image/index/05head.svg" alt="프로젝트2 모바일 리디자인">
                 <h2>TWOSOME</h2>
             </div>
             <div class="cnt5_wrap">
@@ -258,7 +322,7 @@
                 <div class="cnt5_txt">
                     <strong>2019.12.19~2020.01.08</strong>
                     <p>3주간 진행한 개인 작업물입니다. 작업 시기와 관계 없이 (크리스마스, 신년, 발렌타인 등) 언제든 사용할 수 있는 디자인을 중점으로 두었으며, 자세한 사항은 링크를 확인해주세요.</p>
-                    <a href="info/twosome.html">INFO</a>
+                    <a href="info/twosome.html" title="상세 페이지로 연결됩니다.">INFO</a>
                 </div>
             </div>
         </section>

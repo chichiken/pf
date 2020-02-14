@@ -105,11 +105,11 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
     ul li{
         position: relative; margin: 10px 0; color: #fff;
         &:first-child{margin-top: 0;}
-        &:after{content: ""; position: absolute; bottom: -1px; left: 0; width: 0; height: 1px; background: transparent;}
+        &:after{@include transition(width 0.5s); content: ""; position: absolute; bottom: -1px; right: 0; width: 0; height: 1px; background: transparent;}
         a{width: 140px; display: flex; justify-content: space-between;}
     }
     ul li.on{
-        &:after{content: ""; position: absolute; bottom: -1px; left: 0; width: 100%; height: 1px; background: #fff;}
+        &:after{content: ""; position: absolute; bottom: -1px; right: 0; width: 100%; height: 1px; background: #fff;}
     }
 }
 
@@ -184,23 +184,18 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
             display: inline-block; width: 620px;
             &.coding{margin-top: 25px;}
         }
+        .coding{width: 685px;}
         ul li{
-            float: left; text-align: center; font-family: montS; margin-right: 45px;
-            span{
-                @include borderBox;
-                @include radius(50%);
-                display: block; border: 8px solid #fff; width: 110px; height: 110px;
-            }
-            p{font-weight: 400; margin-top: 8px;}
-            strong{font-weight: 500;}
+            position: relative; width: 120px; height: 160px; float: left; text-align: center; font-family: montS; margin-right: 45px;
+            .skill_tit{position: absolute; top: 12.5px; left: 30px; width: 60px; font-size: 50px; line-height: 1.9em;}
+            .skill_bg, .skill_round{fill: none; stroke-width: 8px;}
+            .skill_bg{stroke: #ffffff;}
+            .skill_round{position: absolute; top: 0; left: 0; transform: rotate(-90deg); stroke: #ffa5bb; stroke-dasharray: 0 999; transition: all 1s ease-in-out;}
+            .skill_round circle{position: relative;}
+            .skill_txt span{display: inline-block; font-size: 18px;}
+            .skill_txt .skill_num{color: #ffa5bb; font-weight: 700;}
         }
-        .adobe li span{font-size: 50px; line-height: 1.9em;}
-        .coding li{
-            &:nth-child(1) span{background: url("../image/icon/html.svg") no-repeat center 65%; background-size: 70px;}
-            &:nth-child(2) span{background: url("../image/icon/css.svg") no-repeat center 65%; background-size: 70px;}
-            &:nth-child(3) span{background: url("../image/icon/sass.svg") no-repeat center center; background-size: 70px;}
-            &:nth-child(4) span{background: url("../image/icon/jquery.svg") no-repeat center center; background-size: 60px;}
-        }
+        .coding li .skill_tit{height: 60px; top: 30px;}
     }
     > img{position: absolute; width: 850px; bottom: 0; right: 12.5vw; z-index: 100;}
     &:after{content: ""; position: absolute; top: 0; right: 0; width: 38vw; height: 100vh; background: #f7f7f7; z-index: 0;}
@@ -241,7 +236,7 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
         top: 36px; padding-left: 66px;
         &:after{left: 7.2em;}
     }
-    ul li:nth-child(4) p{font-weight: 200; margin: 18.5vh 0 0 150px;}
+    ul li:nth-child(4) p{margin: 18.5vh 0 0 150px;}
 }
 #container #cnt4{
     background: url("../image/index/bg_project1.jpg") fixed center center;
@@ -289,13 +284,13 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
 /* sub common */
 .info_head{
     @include borderBox;
-    width: 100%; height: 350px; padding-top: 2.8vw; padding-bottom: 2.8vw; margin-bottom: 100px;
+    width: 100%; height: 350px; padding-top: 2.8vw; padding-bottom: 2.8vw; margin-bottom: 125px;
     ul li h2, ul li a:after{@include transition(all 0.4s);}
     ul li h2:hover{color: #ffdeaa;}
-    .inhead1, .inhead2{width: 60%; margin: 0 auto;}
+    .inhead1, .inhead2{width: 65%; margin: 0 auto;}
     .inhead1{
         h2{font-size: 50px; font-weight: 700;}
-        p{width: 66%; margin-left: 30%; margin-top: -70px;}
+        p{margin-left: 30%; margin-top: -70px;}
     }
     .inhead2 li{
         margin-top: 2.5vw;
@@ -311,29 +306,81 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
 .info_head ul li, .info_body ul li{float: left;}
 .info_body{
     width: 100%;
-    article{margin: 50px auto;}
+    article{margin: 0 auto 125px; color: #676767;}
     article h3, article > p{text-align: center;}
-    article h3{font-family: montS; font-size: 50px; font-weight: 500; margin-bottom: 50px;}
+    article h3{font-family: montS; font-size: 50px; font-weight: 500; margin-bottom: 75px; color: #222;}
     article > p{margin-top: 50px;}
     .view li img{@include boxShadow(0 3px 5px rgba(0, 0, 0, 0.3));}
     .color{
-        height: 500px; text-align: center;
-        ul{width: 750px; margin: 0 auto;}
+        text-align: center;
+        ul{width: 475px; margin: 0 auto 50px;}
         ul li{
             margin-left: 75px;
             &:first-child{margin-left: 0;}
             span{
                 @include radius(50%);
-                display: block; width: 200px; height: 200px; color: #fff; font-size: 35px; font-weight: 700; line-height: 200px;
+                @include borderBox;
+                @include transition(all 0.3s);
+                display: block; width: 200px; height: 200px; font-size: 35px; font-weight: 700; line-height: 180px; border: 10px solid;
             }
-            > p{width: 700px; margin-left: auto; margin-right: auto;}
+            span:hover{color: #fff !important;}
+        }
+        > div{
+            width: 1200px; margin-left: auto; margin-right: auto;
+            .cm_color_m, .cm_color_l, .ts_color_m, .ts_color_s{display: inline-block; padding: 0 5px; font-weight: 500; color: #fff;}
         }
     }
 }
 
 #cm_ifhd{
     color: #fff; background: #eb651e;
-    .inhead2 li{margin-left: 50px;}
+    .inhead2 li{margin-left: 3%;}
+}
+#cm_ifbd{
+    article{width: 1600px;}
+    .view{width: 1200px; height: 920px; overflow: hidden;}
+    .view #cmSlider{
+        .prev_next button{
+            @include transition(all 0.4s);
+            position: absolute; top: 0; width: 100px; height: 681px; background: rgba(255, 255, 255, 0.9);
+            &.prev{left: 0px;}
+            &.next{right: 0px;}
+            &:hover{background: rgba(235, 101, 30, 0.8);}
+            &:hover svg{fill: #fff;}
+            svg{@include transition(all 0.4s); width: 63px; height: 85px; fill: #eb651e;}
+        }
+        .slide_indic{display: none;}
+    }
+    .view #cmSdVs{
+        width: 3600px;
+        div{float: left;}
+    }
+    .color{
+        height: 450px;
+        ul li{
+            &:nth-child(1) span{border-color: #eb651e; color: #eb651e;}
+            &:nth-child(2) span{border-color: #e8a64d; color: #e8a64d;}
+            &:nth-child(1) span:hover{background: #eb651e;}
+            &:nth-child(2) span:hover{background: #e8a64d;}
+        }
+        .cm_color_m{background: #eb651e;}
+        .cm_color_l{background: #e8a64d;}
+    }
+    .work{
+        height: 1000px; text-align: center;
+        > ul > li{
+            @include boxShadow(0px 5px 15px -7px);
+            position: relative; float: left; width: 500px; height: 650px; background: #fff; margin-left: 50px; margin-top: 75px;
+            &.ml0{margin-left: 0;}
+            &.mt0{margin-top: 0;}
+            .work_txt{display: inline-block; width: 400px;}
+            img{width: 400px; margin-top: 0.7rem;}
+            h4{font-size: 25px; font-weight: 500; margin: 0.7rem 0;}
+            &:nth-child(2) h4{margin: 3.5rem 0 0.7rem;}
+            p, span, strong{font-size: 16px;}
+        }
+    }
+    .access{height: 100px;}
 }
 
 #ts_ifhd{
@@ -341,18 +388,21 @@ body{font-family: notoS; font-weight: 400; font-size: 18px; color: #555555; line
     .inhead2 li{margin-left: 100px;}
 }
 #ts_ifbd{
-    article{width: 1280px;}
+    article{width: 1180px;}
     .view{
         height: 900px;
         li{margin-left: 50px;}
         li:first-child{margin-left: 0;}
     }
     .color{
+        height: 500px;
         ul li{
-            &:nth-child(1) span{background: #ca1a37;}
-            &:nth-child(2) span{background: #d58d3f;}
-            &:nth-child(3) span{background: #777777;}
+            &:nth-child(1) span{border-color: #ca1a37; color: #ca1a37;}
+            &:nth-child(2) span{border-color: #d58d3f; color: #d58d3f;}
+            &:nth-child(1) span:hover{background: #ca1a37;}
+            &:nth-child(2) span:hover{background: #d58d3f;}
         }
+        .ts_color_m{background: #ca1a37;}
+        .ts_color_s{background: #d58d3f;}
     }
-
 }

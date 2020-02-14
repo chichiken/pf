@@ -135,10 +135,14 @@ body {
     #indicator ul li:first-child {
       margin-top: 0; }
     #indicator ul li:after {
+      -webkit-transition: width 0.5s;
+      -moz-transition: width 0.5s;
+      -o-transition: width 0.5s;
+      transition: width 0.5s;
       content: "";
       position: absolute;
       bottom: -1px;
-      left: 0;
+      right: 0;
       width: 0;
       height: 1px;
       background: transparent; }
@@ -150,7 +154,7 @@ body {
     content: "";
     position: absolute;
     bottom: -1px;
-    left: 0;
+    right: 0;
     width: 100%;
     height: 1px;
     background: #fff; }
@@ -329,42 +333,47 @@ body {
       width: 620px; }
       #container #cnt2 .cnt2_graph ul.coding {
         margin-top: 25px; }
+    #container #cnt2 .cnt2_graph .coding {
+      width: 685px; }
     #container #cnt2 .cnt2_graph ul li {
+      position: relative;
+      width: 120px;
+      height: 160px;
       float: left;
       text-align: center;
       font-family: montS;
       margin-right: 45px; }
-      #container #cnt2 .cnt2_graph ul li span {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        border-radius: 50%;
-        display: block;
-        border: 8px solid #fff;
-        width: 110px;
-        height: 110px; }
-      #container #cnt2 .cnt2_graph ul li p {
-        font-weight: 400;
-        margin-top: 8px; }
-      #container #cnt2 .cnt2_graph ul li strong {
-        font-weight: 500; }
-    #container #cnt2 .cnt2_graph .adobe li span {
-      font-size: 50px;
-      line-height: 1.9em; }
-    #container #cnt2 .cnt2_graph .coding li:nth-child(1) span {
-      background: url("../image/icon/html.svg") no-repeat center 65%;
-      background-size: 70px; }
-    #container #cnt2 .cnt2_graph .coding li:nth-child(2) span {
-      background: url("../image/icon/css.svg") no-repeat center 65%;
-      background-size: 70px; }
-    #container #cnt2 .cnt2_graph .coding li:nth-child(3) span {
-      background: url("../image/icon/sass.svg") no-repeat center center;
-      background-size: 70px; }
-    #container #cnt2 .cnt2_graph .coding li:nth-child(4) span {
-      background: url("../image/icon/jquery.svg") no-repeat center center;
-      background-size: 60px; }
+      #container #cnt2 .cnt2_graph ul li .skill_tit {
+        position: absolute;
+        top: 12.5px;
+        left: 30px;
+        width: 60px;
+        font-size: 50px;
+        line-height: 1.9em; }
+      #container #cnt2 .cnt2_graph ul li .skill_bg, #container #cnt2 .cnt2_graph ul li .skill_round {
+        fill: none;
+        stroke-width: 8px; }
+      #container #cnt2 .cnt2_graph ul li .skill_bg {
+        stroke: #ffffff; }
+      #container #cnt2 .cnt2_graph ul li .skill_round {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotate(-90deg);
+        stroke: #ffa5bb;
+        stroke-dasharray: 0 999;
+        transition: all 1s ease-in-out; }
+      #container #cnt2 .cnt2_graph ul li .skill_round circle {
+        position: relative; }
+      #container #cnt2 .cnt2_graph ul li .skill_txt span {
+        display: inline-block;
+        font-size: 18px; }
+      #container #cnt2 .cnt2_graph ul li .skill_txt .skill_num {
+        color: #ffa5bb;
+        font-weight: 700; }
+    #container #cnt2 .cnt2_graph .coding li .skill_tit {
+      height: 60px;
+      top: 30px; }
   #container #cnt2 > img {
     position: absolute;
     width: 850px;
@@ -440,7 +449,6 @@ body {
     #container #cnt3 ul li:nth-child(3) .cnt3_txt:after {
       left: 7.2em; }
   #container #cnt3 ul li:nth-child(4) p {
-    font-weight: 200;
     margin: 18.5vh 0 0 150px; }
 
 #container #cnt4 {
@@ -547,7 +555,7 @@ body {
   height: 350px;
   padding-top: 2.8vw;
   padding-bottom: 2.8vw;
-  margin-bottom: 100px; }
+  margin-bottom: 125px; }
   .info_head ul li h2, .info_head ul li a:after {
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
@@ -556,13 +564,12 @@ body {
   .info_head ul li h2:hover {
     color: #ffdeaa; }
   .info_head .inhead1, .info_head .inhead2 {
-    width: 60%;
+    width: 65%;
     margin: 0 auto; }
   .info_head .inhead1 h2 {
     font-size: 50px;
     font-weight: 700; }
   .info_head .inhead1 p {
-    width: 66%;
     margin-left: 30%;
     margin-top: -70px; }
   .info_head .inhead2 li {
@@ -592,14 +599,16 @@ body {
 .info_body {
   width: 100%; }
   .info_body article {
-    margin: 50px auto; }
+    margin: 0 auto 125px;
+    color: #676767; }
   .info_body article h3, .info_body article > p {
     text-align: center; }
   .info_body article h3 {
     font-family: montS;
     font-size: 50px;
     font-weight: 500;
-    margin-bottom: 50px; }
+    margin-bottom: 75px;
+    color: #222; }
   .info_body article > p {
     margin-top: 50px; }
   .info_body .view li img {
@@ -607,11 +616,10 @@ body {
     -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); }
   .info_body .color {
-    height: 500px;
     text-align: center; }
     .info_body .color ul {
-      width: 750px;
-      margin: 0 auto; }
+      width: 475px;
+      margin: 0 auto 50px; }
     .info_body .color ul li {
       margin-left: 75px; }
       .info_body .color ul li:first-child {
@@ -620,23 +628,126 @@ body {
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
         border-radius: 50%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
         display: block;
         width: 200px;
         height: 200px;
-        color: #fff;
         font-size: 35px;
         font-weight: 700;
-        line-height: 200px; }
-      .info_body .color ul li > p {
-        width: 700px;
-        margin-left: auto;
-        margin-right: auto; }
+        line-height: 180px;
+        border: 10px solid; }
+      .info_body .color ul li span:hover {
+        color: #fff !important; }
+    .info_body .color > div {
+      width: 1200px;
+      margin-left: auto;
+      margin-right: auto; }
+      .info_body .color > div .cm_color_m, .info_body .color > div .cm_color_l, .info_body .color > div .ts_color_m, .info_body .color > div .ts_color_s {
+        display: inline-block;
+        padding: 0 5px;
+        font-weight: 500;
+        color: #fff; }
 
 #cm_ifhd {
   color: #fff;
   background: #eb651e; }
   #cm_ifhd .inhead2 li {
-    margin-left: 50px; }
+    margin-left: 3%; }
+
+#cm_ifbd article {
+  width: 1600px; }
+#cm_ifbd .view {
+  width: 1200px;
+  height: 920px;
+  overflow: hidden; }
+#cm_ifbd .view #cmSlider .prev_next button {
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 681px;
+  background: rgba(255, 255, 255, 0.9); }
+  #cm_ifbd .view #cmSlider .prev_next button.prev {
+    left: 0px; }
+  #cm_ifbd .view #cmSlider .prev_next button.next {
+    right: 0px; }
+  #cm_ifbd .view #cmSlider .prev_next button:hover {
+    background: rgba(235, 101, 30, 0.8); }
+  #cm_ifbd .view #cmSlider .prev_next button:hover svg {
+    fill: #fff; }
+  #cm_ifbd .view #cmSlider .prev_next button svg {
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+    width: 63px;
+    height: 85px;
+    fill: #eb651e; }
+#cm_ifbd .view #cmSlider .slide_indic {
+  display: none; }
+#cm_ifbd .view #cmSdVs {
+  width: 3600px; }
+  #cm_ifbd .view #cmSdVs div {
+    float: left; }
+#cm_ifbd .color {
+  height: 450px; }
+  #cm_ifbd .color ul li:nth-child(1) span {
+    border-color: #eb651e;
+    color: #eb651e; }
+  #cm_ifbd .color ul li:nth-child(2) span {
+    border-color: #e8a64d;
+    color: #e8a64d; }
+  #cm_ifbd .color ul li:nth-child(1) span:hover {
+    background: #eb651e; }
+  #cm_ifbd .color ul li:nth-child(2) span:hover {
+    background: #e8a64d; }
+  #cm_ifbd .color .cm_color_m {
+    background: #eb651e; }
+  #cm_ifbd .color .cm_color_l {
+    background: #e8a64d; }
+#cm_ifbd .work {
+  height: 1000px;
+  text-align: center; }
+  #cm_ifbd .work > ul > li {
+    -webkit-box-shadow: 0px 5px 15px -7px;
+    -moz-box-shadow: 0px 5px 15px -7px;
+    box-shadow: 0px 5px 15px -7px;
+    position: relative;
+    float: left;
+    width: 500px;
+    height: 650px;
+    background: #fff;
+    margin-left: 50px;
+    margin-top: 75px; }
+    #cm_ifbd .work > ul > li.ml0 {
+      margin-left: 0; }
+    #cm_ifbd .work > ul > li.mt0 {
+      margin-top: 0; }
+    #cm_ifbd .work > ul > li .work_txt {
+      display: inline-block;
+      width: 400px; }
+    #cm_ifbd .work > ul > li img {
+      width: 400px;
+      margin-top: 0.7rem; }
+    #cm_ifbd .work > ul > li h4 {
+      font-size: 25px;
+      font-weight: 500;
+      margin: 0.7rem 0; }
+    #cm_ifbd .work > ul > li:nth-child(2) h4 {
+      margin: 3.5rem 0 0.7rem; }
+    #cm_ifbd .work > ul > li p, #cm_ifbd .work > ul > li span, #cm_ifbd .work > ul > li strong {
+      font-size: 16px; }
+#cm_ifbd .access {
+  height: 100px; }
 
 #ts_ifhd {
   color: #fff;
@@ -645,18 +756,28 @@ body {
     margin-left: 100px; }
 
 #ts_ifbd article {
-  width: 1280px; }
+  width: 1180px; }
 #ts_ifbd .view {
   height: 900px; }
   #ts_ifbd .view li {
     margin-left: 50px; }
   #ts_ifbd .view li:first-child {
     margin-left: 0; }
-#ts_ifbd .color ul li:nth-child(1) span {
-  background: #ca1a37; }
-#ts_ifbd .color ul li:nth-child(2) span {
-  background: #d58d3f; }
-#ts_ifbd .color ul li:nth-child(3) span {
-  background: #777777; }
+#ts_ifbd .color {
+  height: 500px; }
+  #ts_ifbd .color ul li:nth-child(1) span {
+    border-color: #ca1a37;
+    color: #ca1a37; }
+  #ts_ifbd .color ul li:nth-child(2) span {
+    border-color: #d58d3f;
+    color: #d58d3f; }
+  #ts_ifbd .color ul li:nth-child(1) span:hover {
+    background: #ca1a37; }
+  #ts_ifbd .color ul li:nth-child(2) span:hover {
+    background: #d58d3f; }
+  #ts_ifbd .color .ts_color_m {
+    background: #ca1a37; }
+  #ts_ifbd .color .ts_color_s {
+    background: #d58d3f; }
 
 /*# sourceMappingURL=style.css.map */
